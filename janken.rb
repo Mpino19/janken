@@ -55,8 +55,10 @@ def acchimuite_hoi
   end
   if (player_dir == cpu_dir) && (@janken_result == "win")
     puts "あなたの勝ちです"
+    exit
   elsif (player_dir == cpu_dir) && (@janken_result == "lose")
     puts "あなたの負けです"
+    exit
   end
   puts "じゃんけん、、、"
   janken
