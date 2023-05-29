@@ -45,8 +45,14 @@ def acchimuite_hoi
     exit
   end
   puts "ほい！"
-  puts "あなた:#{directions[player_dir]}を指しました"
-  puts "相手:#{directions[cpu_dir]}を指しました"
+  case @janken_result
+  when "win"
+    puts "あなた:#{directions[player_dir]}を指しました"
+    puts "相手:#{directions[cpu_dir]}を向きました"
+  when "lose"
+    puts "あなた:#{directions[player_dir]}を向きました"
+    puts "相手:#{directions[cpu_dir]}を指しました"
+  end
   if (player_dir == cpu_dir) && (@janken_result == "win")
     puts "あなたの勝ちです"
   elsif (player_dir == cpu_dir) && (@janken_result == "lose")
